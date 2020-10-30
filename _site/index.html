@@ -23,56 +23,56 @@
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
-                                 <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="shortcut icon" href="/public/favicon.ico">
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 </head>
 
 
   <body>
+    <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+    <script>
+      addBackToTop({
+        diameter: 56,
+        backgroundColor: '#000000',
+        textColor: '#ffffff'
+      })
+    </script>
 
     <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <h1>
-        <a href="/">
-          Matias Levy-Hara
-        </a>
-      </h1>
-      <p class="lead">A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.</p>
+      <img src="/assets/circle-cropped.png"/>
+      <p class="lead">Welcome to my online portfolio! Check out my links below.</p>
     </div>
 
     <nav class="sidebar-nav">
-      <a class="sidebar-nav-item active" href="/">Home</a>
+
+      <div>
+        <a href="#Work-Experience">Work Experience</a><br>
+        <a href="#Personal-Projects">Personal Projects</a>
+      </div>
 
       
+      <div class="icons">
+        <a href="https://github.com/matiaslh" target="_blank">
+          <span class="iconify" data-icon="ant-design:github-filled" data-inline="false"></span>
+        </a>
+        <a href="https://www.linkedin.com/in/matiaslh" target="_blank">
+          <span class="iconify" data-icon="ant-design:linkedin-filled" data-inline="false"></span>
+        </a>
+        <a href="mailto:matiaslh@gmail.com" target="_blank">
+          <span class="iconify" data-icon="carbon:email" data-inline="false"></span>
+        </a>
+      </div>
+
 
       
-      
-        
-          
-        
-      
-        
-          
-            <a class="sidebar-nav-item" href="/about/">About</a>
-          
-        
-      
-        
-      
-        
-          
-        
-      
-
-      <a class="sidebar-nav-item" href="https://github.com/poole/hyde/archive/v2.1.0.zip">Download</a>
-      <a class="sidebar-nav-item" href="https://github.com/poole/hyde">GitHub project</a>
-      <span class="sidebar-nav-item">Currently v2.1.0</span>
     </nav>
 
-    <p>&copy; 2020. All rights reserved.</p>
   </div>
 </div>
 
@@ -83,7 +83,7 @@
   <div class="post">
     <h1 class="post-title">
       <a href="/2020/10/30/introducing-matias/">
-        Hello, I'm Matias Levy-Hara
+        Hello, I'm Matias Levy-Hara!
       </a>
     </h1>
 
@@ -91,11 +91,17 @@
 
     <p>I’m a Software Developer based in Toronto, Ontario currently in 5th year Computer Science, Math minor at the University of Guelph.</p>
 
-<h3 id="work-experience">Work Experience</h3>
+<hr />
 
-<p>May – August 2020, May – August 2017<br />
-<strong>Angular Developer | Tyler Technologies | Toronto ON</strong>
-<img src="/assets/tyler.png" height="70px" width="78.75px" style="display:inline;vertical-align:middle" /></p>
+<h1 id="Work-Experience">Work Experience</h1>
+
+<p style="margin-bottom:0">May – August 2020, May – August 2017</p>
+<div style="display:inline-block;">
+    <strong>Angular Developer | Tyler Technologies | Toronto ON</strong>
+</div>
+<div style="display:inline-block;vertical-align:middle;margin-top:10px;margin-left:10px">
+    <img src="/assets/tyler_tech.png" alt="img" width="80px" />
+</div>
 
 <ul>
   <li>Migrated outdated administrator services and web pages to new technologies
@@ -103,8 +109,13 @@ including Angular 8 with RxJS and C# in the backend to build a modern material
 design for client’s admin tools.</li>
 </ul>
 
-<p>May – August 2019<br />
-<strong>Java Developer | NCR Corporation | Waterloo ON</strong></p>
+<p style="margin-bottom:0">May – August 2019</p>
+<div style="display:inline-block;">
+    <strong>Java Developer | NCR Corporation | Waterloo ON</strong>
+</div>
+<div style="display:inline-block;vertical-align:middle;margin-top:10px;margin-left:10px">
+    <img src="/assets/ncr_corporation.png" alt="img" width="80px" />
+</div>
 
 <ul>
   <li>Delivered Passport Cheque Scanning Software to improve customer updates on
@@ -112,8 +123,13 @@ scanner drivers so that users could upgrade their systems more easily.</li>
   <li>Modified Java services in the backend to be used by the frontend framework</li>
 </ul>
 
-<p>May – December 2018<br />
-<strong>Web Developer | Kenna Communications | Mississauga ON</strong></p>
+<p style="margin-bottom:0">May – December 2018</p>
+<div style="display:inline-block;">
+    <strong>Web Developer | Kenna Communications | Mississauga ON</strong>
+</div>
+<div style="display:inline-block;vertical-align:middle;margin-top:10px;margin-left:10px">
+    <img src="/assets/kenna_comm.png" alt="img" width="80px" />
+</div>
 
 <ul>
   <li>Implemented end of year update of graph analytics and statistics for the client
@@ -122,194 +138,35 @@ to show customers the effectiveness of their product.</li>
 functionality and used client mockups to create new features.</li>
 </ul>
 
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2012/02/07/example-content/">
-        Example content
-      </a>
-    </h1>
-
-    <span class="post-date">07 Feb 2012</span>
-
-    <div class="message">
-  Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
-</div>
-
-<p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-
-<blockquote>
-  <p>Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-</blockquote>
-
-<p>Etiam porta <strong>sem malesuada magna</strong> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-
-<h2 id="inline-html-elements">Inline HTML elements</h2>
-
-<p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
-
-<ul>
-  <li><strong>To bold text</strong>, use <code>&lt;strong&gt;</code>.</li>
-  <li><em>To italicize text</em>, use <code>&lt;em&gt;</code>.</li>
-  <li>Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use <code>&lt;abbr&gt;</code>, with an optional <code>title</code> attribute for the full phrase.</li>
-  <li>Citations, like <cite>— Mark otto</cite>, should use <code>&lt;cite&gt;</code>.</li>
-  <li><del>Deleted</del> text should use <code>&lt;del&gt;</code> and <ins>inserted</ins> text should use <code>&lt;ins&gt;</code>.</li>
-  <li>Superscript <sup>text</sup> uses <code>&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code>&lt;sub&gt;</code>.</li>
-</ul>
-
-<p>Most of these elements are styled by browsers with few modifications on our part.</p>
-
-<h2 id="heading">Heading</h2>
-
-<p>Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-
-<h3 id="code">Code</h3>
-
-<p>Cum sociis natoque penatibus et magnis dis <code>code element</code> montes, nascetur ridiculus mus.</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Example can be run directly in your JavaScript console
-</span>
-
-<span class="c1">// Create a function that takes two arguments and returns the sum of those arguments
-</span>
-<span class="kd">var</span> <span class="nx">adder</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">return a + b</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="c1">// Call the function
-</span>
-<span class="nx">adder</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
-<span class="c1">// &gt; 8</span></code></pre></figure>
-
-<p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-
-<h3 id="gists-via-github-pages">Gists via GitHub Pages</h3>
-
-<p>Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui.</p>
-
-<noscript><pre>400: Invalid request</pre></noscript>
-<script src="https://gist.github.com/5555251.js?file=gist.md"> </script>
-
-<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper.</p>
-
-<h3 id="lists">Lists</h3>
-
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-
-<ul>
-  <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-  <li>Donec id elit non mi porta gravida at eget metus.</li>
-  <li>Nulla vitae elit libero, a pharetra augue.</li>
-</ul>
-
-<p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-
-<ol>
-  <li>Vestibulum id ligula porta felis euismod semper.</li>
-  <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-  <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-</ol>
-
-<p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-
-<dl>
-  <dt>HyperText Markup Language (HTML)</dt>
-  <dd>The language used to describe and define the content of a Web page</dd>
-
-  <dt>Cascading Style Sheets (CSS)</dt>
-  <dd>Used to describe the appearance of Web content</dd>
-
-  <dt>JavaScript (JS)</dt>
-  <dd>The programming language used to build advanced Web sites and applications</dd>
-</dl>
-
-<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-
-<h3 id="images">Images</h3>
-
-<p>Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.</p>
-
-<p><img src="http://placehold.it/800x400" alt="placeholder" title="Large example image" />
-<img src="http://placehold.it/400x200" alt="placeholder" title="Medium example image" />
-<img src="http://placehold.it/200x200" alt="placeholder" title="Small example image" /></p>
-
-<h3 id="tables">Tables</h3>
-
-<p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Upvotes</th>
-      <th>Downvotes</th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td>Totals</td>
-      <td>21</td>
-      <td>23</td>
-    </tr>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td>Alice</td>
-      <td>10</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>Bob</td>
-      <td>4</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Charlie</td>
-      <td>7</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-
 <hr />
 
-<p>Want to see something else added? <a href="https://github.com/poole/poole/issues/new">Open an issue.</a></p>
+<h1 id="Personal-Projects">Personal Projects</h1>
 
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2012/02/06/whats-jekyll/">
-        What's Jekyll?
-      </a>
-    </h1>
+<p>September – December 2020<br />
+<strong>Microsoft Teams Bot | Compubotics</strong></p>
+<ul>
+  <li>Collaborated with project group members to create a Microsoft Teams bot using
+Node.js and the Microsoft Azure Bot Framework hosted on University of Guelph
+servers.</li>
+  <li>The bot enables users to get information about previous courses they had taken,
+their grades, and their current school schedule with the interface of a chat bot.</li>
+</ul>
 
-    <span class="post-date">06 Feb 2012</span>
-
-    <p><a href="http://jekyllrb.com">Jekyll</a> is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From <a href="https://github.com/mojombo/jekyll/blob/master/README.markdown">the project’s readme</a>:</p>
-
-<blockquote>
-  <p>Jekyll is a simple, blog aware, static site generator. It takes a template directory […] and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.</p>
-</blockquote>
-
-<p>It’s an immensely useful tool and one we encourage you to use here with Hyde.</p>
-
-<p>Find out more by <a href="https://github.com/mojombo/jekyll">visiting the project on GitHub</a>.</p>
+<p>June – August 2019
+U OF G CLASS SUITE | UNIVERSITY OF GUELPH</p>
+<ul>
+  <li>Created two frontend applications with React.js and React Native with a Node.js
+server and Mongo DB, containerized using docker.</li>
+  <li>The app allows users to configure courses and alerts them once they become
+available.</li>
+  <li>User must input their desired course load, and the web app shows all the
+possible schedules for the student to organize their courses.</li>
+</ul>
 
   </div>
   
 </div>
 
-<div class="pagination">
-  
-    <span class="pagination-item older">Older</span>
-  
-  
-    <span class="pagination-item newer">Newer</span>
-  
-</div>
     </div>
 
   </body>

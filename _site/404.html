@@ -23,56 +23,56 @@
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
-                                 <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="shortcut icon" href="/public/favicon.ico">
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 </head>
 
 
   <body>
+    <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+    <script>
+      addBackToTop({
+        diameter: 56,
+        backgroundColor: '#000000',
+        textColor: '#ffffff'
+      })
+    </script>
 
     <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <h1>
-        <a href="/">
-          Matias Levy-Hara
-        </a>
-      </h1>
-      <p class="lead">A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.</p>
+      <img src="/assets/circle-cropped.png"/>
+      <p class="lead">Welcome to my online portfolio! Check out my links below.</p>
     </div>
 
     <nav class="sidebar-nav">
-      <a class="sidebar-nav-item" href="/">Home</a>
+
+      <div>
+        <a href="#Work-Experience">Work Experience</a><br>
+        <a href="#Personal-Projects">Personal Projects</a>
+      </div>
 
       
+      <div class="icons">
+        <a href="https://github.com/matiaslh" target="_blank">
+          <span class="iconify" data-icon="ant-design:github-filled" data-inline="false"></span>
+        </a>
+        <a href="https://www.linkedin.com/in/matiaslh" target="_blank">
+          <span class="iconify" data-icon="ant-design:linkedin-filled" data-inline="false"></span>
+        </a>
+        <a href="mailto:matiaslh@gmail.com" target="_blank">
+          <span class="iconify" data-icon="carbon:email" data-inline="false"></span>
+        </a>
+      </div>
+
 
       
-      
-        
-          
-        
-      
-        
-          
-            <a class="sidebar-nav-item" href="/about/">About</a>
-          
-        
-      
-        
-      
-        
-          
-        
-      
-
-      <a class="sidebar-nav-item" href="https://github.com/poole/hyde/archive/v2.1.0.zip">Download</a>
-      <a class="sidebar-nav-item" href="https://github.com/poole/hyde">GitHub project</a>
-      <span class="sidebar-nav-item">Currently v2.1.0</span>
     </nav>
 
-    <p>&copy; 2020. All rights reserved.</p>
   </div>
 </div>
 

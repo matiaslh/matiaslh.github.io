@@ -31,7 +31,21 @@
  * Update the foundational and global aspects of the page.
  */
 
+
+/* My icons styles */
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 60px;
+}
+.icons > a > svg {
+  color:white
+}
+
 html {
+  scroll-behavior: smooth;
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
 }
 @media (min-width: 48em) {
@@ -107,7 +121,6 @@ a.sidebar-nav-item:focus {
 
 @media (min-width: 48em) {
   .sidebar-sticky {
-    position: absolute;
     right:  1rem;
     bottom: 1rem;
     left:   1rem;
