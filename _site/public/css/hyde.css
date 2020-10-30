@@ -41,8 +41,11 @@
   font-size: 60px;
 }
 .icons > a > svg {
-  color:white
+  color:white;
 }
+/* img {
+  margin-bottom: 0;
+} */
 
 html {
   scroll-behavior: smooth;

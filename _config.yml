@@ -10,12 +10,14 @@ permalink:        pretty
 title:            Matias Levy-Hara
 tagline:          'Portfolio'
 description:      'A portfolio for Matias Levy-Hara'
-url:              https://matiaslh.github.io
+url:              https://matiaslh.github.io/
 baseurl:          /
 
 author:
   name:           'Matias Levy-Hara'
-  url:            https://matiaslh.github.io
+  url:            https://github.com/matiaslh/
+
+paginate:         5
 
 plugins:
   - jekyll-paginate

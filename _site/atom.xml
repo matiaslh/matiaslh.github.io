@@ -4,19 +4,19 @@
  <title>Matias Levy-Hara</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-10-30T17:44:04-04:00</updated>
+ <updated>2020-10-30T18:04:38-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
-   <name>Mark Otto</name>
+   <name>Matias Levy-Hara</name>
    <email></email>
  </author>
 
  
  <entry>
    <title>Hello, I'm Matias Levy-Hara!</title>
-   <link href="http://localhost:4000/2020/10/30/introducing-matias/"/>
+   <link href="http://localhost:4000/2020/10/30/matias/"/>
    <updated>2020-10-30T00:00:00-04:00</updated>
-   <id>http://localhost:4000/2020/10/30/introducing-matias</id>
+   <id>http://localhost:4000/2020/10/30/matias</id>
    <content type="html">&lt;p&gt;I’m a Software Developer based in Toronto, Ontario currently in 5th year Computer Science, Math minor at the University of Guelph.&lt;/p&gt;
 
 &lt;hr /&gt;
