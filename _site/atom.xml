@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>Hyde</title>
+ <title>Matias Levy-Hara</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-10-30T00:22:10-04:00</updated>
+ <updated>2020-10-30T12:38:19-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Mark Otto</name>
@@ -13,7 +13,7 @@
 
  
  <entry>
-   <title>Matias Levy-Hara</title>
+   <title>Hello, I'm Matias Levy-Hara</title>
    <link href="http://localhost:4000/2020/10/30/introducing-matias/"/>
    <updated>2020-10-30T00:00:00-04:00</updated>
    <id>http://localhost:4000/2020/10/30/introducing-matias</id>
@@ -21,34 +21,33 @@
 
 &lt;h3 id=&quot;work-experience&quot;&gt;Work Experience&lt;/h3&gt;
 
-&lt;p style=&quot;padding-top:10px&quot;&gt;
-May – August 2020, May – August 2017&lt;br /&gt;
-&lt;strong&gt;Angular Developer | Tyler Technologies | Toronto ON&lt;/strong&gt;&lt;br /&gt;
-&lt;/p&gt;
+&lt;p&gt;May – August 2020, May – August 2017&lt;br /&gt;
+&lt;strong&gt;Angular Developer | Tyler Technologies | Toronto ON&lt;/strong&gt;
+&lt;img src=&quot;/assets/tyler.png&quot; height=&quot;70px&quot; width=&quot;78.75px&quot; style=&quot;display:inline;vertical-align:middle&quot; /&gt;&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;Migrated outdated administrator services and web pages to new technologies
 including Angular 8 with RxJS and C# in the backend to build a modern material
 design for client’s admin tools.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p style=&quot;padding-top:10px&quot;&gt;
-May – August 2019&lt;br /&gt;
-&lt;strong&gt;Angular Developer | Tyler Technologies | Toronto ON&lt;/strong&gt;&lt;br /&gt;
-&lt;/p&gt;
+&lt;p&gt;May – August 2019&lt;br /&gt;
+&lt;strong&gt;Java Developer | NCR Corporation | Waterloo ON&lt;/strong&gt;&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;Migrated outdated administrator services and web pages to new technologies
-including Angular 8 with RxJS and C# in the backend to build a modern material
-design for client’s admin tools.&lt;/li&gt;
+  &lt;li&gt;Delivered Passport Cheque Scanning Software to improve customer updates on
+scanner drivers so that users could upgrade their systems more easily.&lt;/li&gt;
+  &lt;li&gt;Modified Java services in the backend to be used by the frontend framework&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p style=&quot;padding-top:10px&quot;&gt;
-May – August 2020, May – August 2017 &lt;br /&gt;
-&lt;strong&gt;Angular Developer | Tyler Technologies | Toronto ON&lt;/strong&gt;&lt;br /&gt;
-&lt;/p&gt;
+&lt;p&gt;May – December 2018&lt;br /&gt;
+&lt;strong&gt;Web Developer | Kenna Communications | Mississauga ON&lt;/strong&gt;&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;Migrated outdated administrator services and web pages to new technologies
-including Angular 8 with RxJS and C# in the backend to build a modern material
-design for client’s admin tools.&lt;/li&gt;
+  &lt;li&gt;Implemented end of year update of graph analytics and statistics for the client
+to show customers the effectiveness of their product.&lt;/li&gt;
+  &lt;li&gt;Communicated with product manager and supervisor to understand current
+functionality and used client mockups to create new features.&lt;/li&gt;
 &lt;/ul&gt;
 
 </content>

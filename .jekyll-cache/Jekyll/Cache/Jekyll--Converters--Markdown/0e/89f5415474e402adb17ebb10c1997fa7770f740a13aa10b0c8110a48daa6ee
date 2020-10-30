@@ -1,0 +1,34 @@
+I"_<p>I’m a Software Developer based in Toronto, Ontario currently in 5th year Computer Science, Math minor at the University of Guelph.</p>
+
+<h3 id="work-experience">Work Experience</h3>
+
+<p>May – August 2020, May – August 2017<br />
+<strong>Angular Developer | Tyler Technologies | Toronto ON</strong><br />
+<img src="/assets/tyler.png" alt="Tyler Technologies" height="36px" width="36px" /></p>
+
+<ul>
+  <li>Migrated outdated administrator services and web pages to new technologies
+including Angular 8 with RxJS and C# in the backend to build a modern material
+design for client’s admin tools.</li>
+</ul>
+
+<p>May – August 2019<br />
+<strong>Java Developer | NCR Corporation | Waterloo ON</strong></p>
+
+<ul>
+  <li>Delivered Passport Cheque Scanning Software to improve customer updates on
+scanner drivers so that users could upgrade their systems more easily.</li>
+  <li>Modified Java services in the backend to be used by the frontend framework</li>
+</ul>
+
+<p>May – December 2018<br />
+<strong>Web Developer | Kenna Communications | Mississauga ON</strong></p>
+
+<ul>
+  <li>Implemented end of year update of graph analytics and statistics for the client
+to show customers the effectiveness of their product.</li>
+  <li>Communicated with product manager and supervisor to understand current
+functionality and used client mockups to create new features.</li>
+</ul>
+
+:ET
