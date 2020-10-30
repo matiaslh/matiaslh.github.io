@@ -4,7 +4,7 @@
  <title>Matias Levy-Hara</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-10-30T17:40:02-04:00</updated>
+ <updated>2020-10-30T17:44:04-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Mark Otto</name>
@@ -80,8 +80,8 @@ servers.&lt;/li&gt;
 their grades, and their current school schedule with the interface of a chat bot.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;June – August 2019
-U OF G CLASS SUITE | UNIVERSITY OF GUELPH&lt;/p&gt;
+&lt;p&gt;June – August 2019&lt;br /&gt;
+&lt;strong&gt;U OF G Class Suite | University of Guelph&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Created two frontend applications with React.js and React Native with a Node.js
 server and Mongo DB, containerized using docker.&lt;/li&gt;

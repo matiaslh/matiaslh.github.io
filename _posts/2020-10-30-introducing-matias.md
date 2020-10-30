@@ -58,8 +58,8 @@ servers.
 * The bot enables users to get information about previous courses they had taken,
 their grades, and their current school schedule with the interface of a chat bot.
 
-June – August 2019
-U OF G CLASS SUITE | UNIVERSITY OF GUELPH
+June – August 2019  
+**U OF G Class Suite | University of Guelph**
 * Created two frontend applications with React.js and React Native with a Node.js
 server and Mongo DB, containerized using docker.
 * The app allows users to configure courses and alerts them once they become
