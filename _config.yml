@@ -1,6 +1,6 @@
 # Dependencies
 markdown:         kramdown
-highlighter:      pygments
+highlighter:      rouge
 
 # Permalinks
 permalink:        pretty
@@ -10,20 +10,12 @@ permalink:        pretty
 title:            Matias Levy-Hara
 tagline:          'Portfolio'
 description:      'A portfolio for Matias Levy-Hara'
-url:              http://hyde.getpoole.com
+url:              https://matiaslh.github.io
 baseurl:          /
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
-
-paginate:         5
-
-# Custom vars
-version:          2.1.0
-
-github:
-  repo:           https://github.com/poole/hyde
+  name:           'Matias Levy-Hara'
+  url:            https://matiaslh.github.io
 
 plugins:
   - jekyll-paginate
