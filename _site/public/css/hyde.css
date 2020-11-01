@@ -54,7 +54,11 @@
   bottom: 0px;
 }
 
-.post > div > img, p {
+.post > div > img {
+  margin-bottom: 0;
+}
+
+p {
   margin-bottom: 0;
 }
 
