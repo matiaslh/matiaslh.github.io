@@ -4,7 +4,7 @@
  <title>Matias Levy-Hara</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-10-30T18:04:38-04:00</updated>
+ <updated>2020-10-30T23:29:30-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Matias Levy-Hara</name>
@@ -23,11 +23,11 @@
 
 &lt;h1 id=&quot;Work-Experience&quot;&gt;Work Experience&lt;/h1&gt;
 
-&lt;p style=&quot;margin-bottom:0&quot;&gt;May – August 2020, May – August 2017&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;May – August 2020, May – August 2017&lt;/small&gt;&lt;/p&gt;
 &lt;div style=&quot;display:inline-block;&quot;&gt;
     &lt;strong&gt;Angular Developer | Tyler Technologies | Toronto ON&lt;/strong&gt;
 &lt;/div&gt;
-&lt;div style=&quot;display:inline-block;vertical-align:middle;margin-top:10px;margin-left:10px&quot;&gt;
+&lt;div class=&quot;work-icon&quot;&gt;
     &lt;img src=&quot;/assets/tyler_tech.png&quot; alt=&quot;img&quot; width=&quot;80px&quot; /&gt;
 &lt;/div&gt;
 
@@ -37,11 +37,11 @@ including Angular 8 with RxJS and C# in the backend to build a modern material
 design for client’s admin tools.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p style=&quot;margin-bottom:0&quot;&gt;May – August 2019&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;May – August 2019&lt;/small&gt;&lt;/p&gt;
 &lt;div style=&quot;display:inline-block;&quot;&gt;
     &lt;strong&gt;Java Developer | NCR Corporation | Waterloo ON&lt;/strong&gt;
 &lt;/div&gt;
-&lt;div style=&quot;display:inline-block;vertical-align:middle;margin-top:10px;margin-left:10px&quot;&gt;
+&lt;div class=&quot;work-icon&quot;&gt;
     &lt;img src=&quot;/assets/ncr_corporation.png&quot; alt=&quot;img&quot; width=&quot;80px&quot; /&gt;
 &lt;/div&gt;
 
@@ -51,11 +51,11 @@ scanner drivers so that users could upgrade their systems more easily.&lt;/li&gt
   &lt;li&gt;Modified Java services in the backend to be used by the frontend framework&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p style=&quot;margin-bottom:0&quot;&gt;May – December 2018&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;May – December 2018&lt;/small&gt;&lt;/p&gt;
 &lt;div style=&quot;display:inline-block;&quot;&gt;
     &lt;strong&gt;Web Developer | Kenna Communications | Mississauga ON&lt;/strong&gt;
 &lt;/div&gt;
-&lt;div style=&quot;display:inline-block;vertical-align:middle;margin-top:10px;margin-left:10px&quot;&gt;
+&lt;div class=&quot;work-icon&quot;&gt;
     &lt;img src=&quot;/assets/kenna_comm.png&quot; alt=&quot;img&quot; width=&quot;80px&quot; /&gt;
 &lt;/div&gt;
 
@@ -70,8 +70,14 @@ functionality and used client mockups to create new features.&lt;/li&gt;
 
 &lt;h1 id=&quot;Personal-Projects&quot;&gt;Personal Projects&lt;/h1&gt;
 
-&lt;p&gt;September – December 2020&lt;br /&gt;
-&lt;strong&gt;Microsoft Teams Bot | Compubotics&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;September – December 2020&lt;/small&gt;&lt;/p&gt;
+&lt;div style=&quot;display:inline-block;&quot;&gt;
+    &lt;strong&gt;Microsoft Teams Bot | Compubotics&lt;/strong&gt;
+&lt;/div&gt;
+&lt;div class=&quot;work-icon&quot;&gt;
+    &lt;img src=&quot;/assets/teams.jpg&quot; alt=&quot;img&quot; width=&quot;70px&quot; /&gt;
+&lt;/div&gt;
+
 &lt;ul&gt;
   &lt;li&gt;Collaborated with project group members to create a Microsoft Teams bot using
 Node.js and the Microsoft Azure Bot Framework hosted on University of Guelph
@@ -80,8 +86,14 @@ servers.&lt;/li&gt;
 their grades, and their current school schedule with the interface of a chat bot.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;June – August 2019&lt;br /&gt;
-&lt;strong&gt;U OF G Class Suite | University of Guelph&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;June – August 2019&lt;/small&gt;&lt;/p&gt;
+&lt;div style=&quot;display:inline-block;&quot;&gt;
+    &lt;a href=&quot;https://github.com/matiaslh/classlink&quot; style=&quot;color:#303030&quot;&gt;&lt;strong&gt;U OF G Class Suite | University of Guelph&lt;/strong&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;work-icon&quot;&gt;
+    &lt;img src=&quot;/assets/classlink.ico&quot; alt=&quot;img&quot; width=&quot;40px&quot; /&gt;
+&lt;/div&gt;
+
 &lt;ul&gt;
   &lt;li&gt;Created two frontend applications with React.js and React Native with a Node.js
 server and Mongo DB, containerized using docker.&lt;/li&gt;

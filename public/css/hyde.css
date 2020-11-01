@@ -34,7 +34,7 @@
 
 /* My icons styles */
 .icons {
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
@@ -43,9 +43,20 @@
 .icons > a > svg {
   color:white;
 }
-/* img {
+.work-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 6px;
+  margin-left: 10px;
+}
+.icons-wrapper {
+  position: absolute;
+  bottom: 0px;
+}
+
+.post > div > img, p {
   margin-bottom: 0;
-} */
+}
 
 html {
   scroll-behavior: smooth;
