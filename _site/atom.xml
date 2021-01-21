@@ -4,7 +4,7 @@
  <title>Matias Levy-Hara</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-10-31T20:38:13-04:00</updated>
+ <updated>2021-01-21T15:06:32-05:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Matias Levy-Hara</name>
@@ -37,6 +37,19 @@ including Angular 8 with RxJS and C# in the backend to build a modern material
 design for client’s admin tools.&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;small&gt;January – April 2020&lt;/small&gt;&lt;/p&gt;
+&lt;div style=&quot;display:inline-block;&quot;&gt;
+    &lt;strong&gt;Software Developer | Camis Inc. | Guelph ON&lt;/strong&gt;
+&lt;/div&gt;
+&lt;div class=&quot;work-icon&quot;&gt;
+    &lt;img src=&quot;/assets/camis.png&quot; alt=&quot;img&quot; width=&quot;80px&quot; /&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Created and designed new mobile app using React Native with Redux with Software Development team and client’s specific needs.&lt;/li&gt;
+  &lt;li&gt;Developed and maintained camping website to allow users easy access to recreational scheduling using Angular 7 with RxJS.&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;p&gt;&lt;small&gt;May – August 2019&lt;/small&gt;&lt;/p&gt;
 &lt;div style=&quot;display:inline-block;&quot;&gt;
     &lt;strong&gt;Java Developer | NCR Corporation | Waterloo ON&lt;/strong&gt;
@@ -61,7 +74,7 @@ scanner drivers so that users could upgrade their systems more easily.&lt;/li&gt
 
 &lt;ul&gt;
   &lt;li&gt;Implemented end of year update of graph analytics and statistics for the client
-to show customers the effectiveness of their product.&lt;/li&gt;
+to show them the effectiveness of our product.&lt;/li&gt;
   &lt;li&gt;Communicated with product manager and supervisor to understand current
 functionality and used client mockups to create new features.&lt;/li&gt;
 &lt;/ul&gt;

@@ -1,4 +1,4 @@
-I"1<p>I’m a Software Developer based in Toronto, Ontario currently in 5th year Computer Science, Math minor at the University of Guelph.</p>
+I"�<p>I’m a Software Developer based in Toronto, Ontario currently in 5th year Computer Science, Math minor at the University of Guelph.</p>
 
 <hr />
 
@@ -7,6 +7,20 @@
 <p><small>May – August 2020, May – August 2017</small></p>
 <div style="display:inline-block;">
     <strong>Angular Developer | Tyler Technologies | Toronto ON</strong>
+</div>
+<div class="work-icon">
+    <img src="/assets/tyler_tech.png" alt="img" width="80px" />
+</div>
+
+<ul>
+  <li>Migrated outdated administrator services and web pages to new technologies
+including Angular 8 with RxJS and C# in the backend to build a modern material
+design for client’s admin tools.</li>
+</ul>
+
+<p><small>January – April 2020</small></p>
+<div style="display:inline-block;">
+    <strong>Software Developer | Camis Inc. | Guelph ON</strong>
 </div>
 <div class="work-icon">
     <img src="/assets/tyler_tech.png" alt="img" width="80px" />
@@ -42,7 +56,7 @@ scanner drivers so that users could upgrade their systems more easily.</li>
 
 <ul>
   <li>Implemented end of year update of graph analytics and statistics for the client
-to show customers the effectiveness of their product.</li>
+to show them the effectiveness of our product.</li>
   <li>Communicated with product manager and supervisor to understand current
 functionality and used client mockups to create new features.</li>
 </ul>
