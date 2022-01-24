@@ -4,7 +4,7 @@
  <title>Matias Levy-Hara</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2021-01-21T15:06:32-05:00</updated>
+ <updated>2022-01-23T15:27:48-05:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Matias Levy-Hara</name>
@@ -17,11 +17,24 @@
    <link href="http://localhost:4000/2020/10/30/matias/"/>
    <updated>2020-10-30T00:00:00-04:00</updated>
    <id>http://localhost:4000/2020/10/30/matias</id>
-   <content type="html">&lt;p&gt;I’m a Software Developer based in Toronto, Ontario currently in 5th year Computer Science, Math minor at the University of Guelph.&lt;/p&gt;
+   <content type="html">&lt;p&gt;I’m a Software Developer based in Toronto, Ontario currently working in the Amazon AWS Document DB team.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h1 id=&quot;Work-Experience&quot;&gt;Work Experience&lt;/h1&gt;
+
+&lt;p&gt;&lt;small&gt;May 2021 – Current&lt;/small&gt;&lt;/p&gt;
+&lt;div style=&quot;display:inline-block;&quot;&gt;
+    &lt;strong&gt;Software Development Engineer | Amazon AWS | Toronto ON&lt;/strong&gt;
+&lt;/div&gt;
+&lt;div class=&quot;work-icon&quot;&gt;
+    &lt;img src=&quot;/assets/amazon_icon.png&quot; alt=&quot;img&quot; width=&quot;80px&quot; /&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Designed migration of 5 Document DB CloudFormation resources to new platform to improve scalability, speed, reliability and readability of code base.&lt;/li&gt;
+  &lt;li&gt;Planned and carried out performance testing for new analysis dashboard and interpreted results to retain customer database performance impact under 2%.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;small&gt;May – August 2020, May – August 2017&lt;/small&gt;&lt;/p&gt;
 &lt;div style=&quot;display:inline-block;&quot;&gt;
@@ -47,7 +60,7 @@ design for client’s admin tools.&lt;/li&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Created and designed new mobile app using React Native with Redux with Software Development team and client’s specific needs.&lt;/li&gt;
-  &lt;li&gt;Developed and maintained camping website to allow users easy access to recreational scheduling using Angular 7 with RxJS.&lt;/li&gt;
+  &lt;li&gt;Developed and maintained camping website to allow users easy access to recreational scheduling using Angular 8 with RxJS.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;small&gt;May – August 2019&lt;/small&gt;&lt;/p&gt;
@@ -83,6 +96,18 @@ functionality and used client mockups to create new features.&lt;/li&gt;
 
 &lt;h1 id=&quot;Personal-Projects&quot;&gt;Personal Projects&lt;/h1&gt;
 
+&lt;p&gt;&lt;small&gt;December 2021 - Current&lt;/small&gt;&lt;/p&gt;
+&lt;div style=&quot;display:inline-block;&quot;&gt;
+    &lt;strong&gt;E-Commerce Fullstack App | AWS&lt;/strong&gt;
+&lt;/div&gt;
+&lt;div class=&quot;work-icon&quot;&gt;
+    &lt;img src=&quot;/assets/aws_icon.png&quot; alt=&quot;img&quot; width=&quot;40px&quot; /&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Designed and developing full stack application to create and deploy an ecommerce website within seconds using AWS Lambda, Aurora-Serverless, APIGateway, Cognito and Stripe.&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;p&gt;&lt;small&gt;September – December 2020&lt;/small&gt;&lt;/p&gt;
 &lt;div style=&quot;display:inline-block;&quot;&gt;
     &lt;strong&gt;Microsoft Teams Bot | Compubotics&lt;/strong&gt;
@@ -101,7 +126,7 @@ their grades, and their current school schedule with the interface of a chat bot
 
 &lt;p&gt;&lt;small&gt;June – August 2019&lt;/small&gt;&lt;/p&gt;
 &lt;div style=&quot;display:inline-block;&quot;&gt;
-    &lt;a href=&quot;https://github.com/matiaslh/classlink&quot; style=&quot;color:#303030&quot;&gt;&lt;strong&gt;U OF G Class Suite | University of Guelph&lt;/strong&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://github.com/matiaslh/classlink&quot; style=&quot;color:#303030&quot;&gt;&lt;strong&gt;U of G Class Suite | University of Guelph&lt;/strong&gt;&lt;/a&gt;
 &lt;/div&gt;
 &lt;div class=&quot;work-icon&quot;&gt;
     &lt;img src=&quot;/assets/classlink.ico&quot; alt=&quot;img&quot; width=&quot;40px&quot; /&gt;

@@ -1,8 +1,21 @@
-I"�<p>I’m a Software Developer based in Toronto, Ontario currently in 5th year Computer Science, Math minor at the University of Guelph.</p>
+I"#<p>I’m a Software Developer based in Toronto, Ontario currently working in the Amazon AWS Document DB team.</p>
 
 <hr />
 
 <h1 id="Work-Experience">Work Experience</h1>
+
+<p><small>May 2021 – Current</small></p>
+<div style="display:inline-block;">
+    <strong>Software Development Engineer | Amazon AWS | Toronto ON</strong>
+</div>
+<div class="work-icon">
+    <img src="/assets/amazon_icon.png" alt="img" width="80px" />
+</div>
+
+<ul>
+  <li>Designed migration of 5 Document DB CloudFormation resources to new platform to improve scalability, speed, reliability and readability of code base.</li>
+  <li>Planned and carried out performance testing for new analysis dashboard and interpreted results to retain customer database performance impact under 2%.</li>
+</ul>
 
 <p><small>May – August 2020, May – August 2017</small></p>
 <div style="display:inline-block;">
@@ -23,13 +36,12 @@ design for client’s admin tools.</li>
     <strong>Software Developer | Camis Inc. | Guelph ON</strong>
 </div>
 <div class="work-icon">
-    <img src="/assets/tyler_tech.png" alt="img" width="80px" />
+    <img src="/assets/camis.png" alt="img" width="80px" />
 </div>
 
 <ul>
-  <li>Migrated outdated administrator services and web pages to new technologies
-including Angular 8 with RxJS and C# in the backend to build a modern material
-design for client’s admin tools.</li>
+  <li>Created and designed new mobile app using React Native with Redux with Software Development team and client’s specific needs.</li>
+  <li>Developed and maintained camping website to allow users easy access to recreational scheduling using Angular 8 with RxJS.</li>
 </ul>
 
 <p><small>May – August 2019</small></p>
@@ -65,6 +77,18 @@ functionality and used client mockups to create new features.</li>
 
 <h1 id="Personal-Projects">Personal Projects</h1>
 
+<p><small>December 2021 - Current</small></p>
+<div style="display:inline-block;">
+    <strong>E-Commerce Fullstack App | AWS</strong>
+</div>
+<div class="work-icon">
+    <img src="/assets/aws_icon.png" alt="img" width="40px" />
+</div>
+
+<ul>
+  <li>Designed and developing full stack application to create and deploy an ecommerce website within seconds using AWS Lambda, Aurora-Serverless, APIGateway, Cognito and Stripe.</li>
+</ul>
+
 <p><small>September – December 2020</small></p>
 <div style="display:inline-block;">
     <strong>Microsoft Teams Bot | Compubotics</strong>
@@ -83,7 +107,7 @@ their grades, and their current school schedule with the interface of a chat bot
 
 <p><small>June – August 2019</small></p>
 <div style="display:inline-block;">
-    <a href="https://github.com/matiaslh/classlink" style="color:#303030"><strong>U OF G Class Suite | University of Guelph</strong></a>
+    <a href="https://github.com/matiaslh/classlink" style="color:#303030"><strong>U of G Class Suite | University of Guelph</strong></a>
 </div>
 <div class="work-icon">
     <img src="/assets/classlink.ico" alt="img" width="40px" />
