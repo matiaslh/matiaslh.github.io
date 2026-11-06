@@ -1,16 +1,278 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matias Levy-Hara — Software Engineer</title>
+  <meta name="description" content="Software engineer at Meta Applied AI in New York, building expert-level tasks and production-ready games that push frontier models.">
+  <meta name="theme-color" content="#07090d">
+  <meta name="color-scheme" content="dark">
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      {{ post.title }}
-    </h1>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://matiaslh.github.io/">
+  <meta property="og:title" content="Matias Levy-Hara — Software Engineer">
+  <meta property="og:description" content="Software engineer at Meta Applied AI in New York, building expert-level tasks and production-ready games that push frontier models.">
 
-    {{ post.content }}
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/parallax.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/terminal.css">
+
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Parallax background: each layer moves at its own depth on scroll and mouse move -->
+  <div class="parallax" aria-hidden="true">
+    <canvas class="parallax__glyphs" data-depth="0.12"></canvas>
+    <div class="parallax__layer parallax__grid" data-depth="0.25" data-repeat="48"></div>
+    <div class="parallax__layer parallax__code" data-depth="0.45"></div>
+    <div class="parallax__layer parallax__symbols" data-depth="0.8"></div>
   </div>
-  {% endfor %}
-</div>
+  <div class="crt" aria-hidden="true"></div>
+
+  <header class="statusbar">
+    <a class="statusbar__brand" href="#home"><span class="c-green">matias</span><span class="c-dim">@</span><span class="c-cyan">nyc</span></a>
+    <nav class="statusbar__nav" aria-label="Sections">
+      <ol>
+        <li><a href="#about" data-nav>about</a></li>
+        <li><a href="#skills" data-nav>skills</a></li>
+        <li><a href="#experience" data-nav>experience</a></li>
+        <li><a href="#education" data-nav>education</a></li>
+        <li><a href="#contact" data-nav>contact</a></li>
+      </ol>
+    </nav>
+    <span class="statusbar__clock" data-clock title="Local time in New York">NYC --:--</span>
+  </header>
+
+  <main id="main">
+
+    <!-- ───────────── HERO ───────────── -->
+    <section id="home" class="hero" aria-label="Introduction">
+      <div class="window window--hero">
+        <div class="window__bar">
+          <span class="window__dots"><i></i><i></i><i></i></span>
+          <span class="window__title">visitor@matiaslh: ~</span>
+        </div>
+        <div class="window__body">
+          <p class="cmd" data-hero-step><span class="prompt">~ $</span> <span class="cmd__text">whoami</span></p>
+          <h1 class="hero__name" data-hero-step>Matias Levy&#8209;Hara</h1>
+
+          <p class="cmd" data-hero-step><span class="prompt">~ $</span> <span class="cmd__text">cat role.txt</span></p>
+          <p class="hero__role" data-hero-step>
+            Software Engineer <span class="c-dim">@</span> <span class="c-cyan">Meta Platforms Applied AI</span><br>
+            <span class="c-dim"># New York, NY — building tasks that push frontier models</span>
+          </p>
+
+          <p class="cmd" data-hero-step><span class="prompt">~ $</span> <span class="cmd__text">ls links/</span></p>
+          <ul class="hero__links" data-hero-step>
+            <li><a href="assets/matias-levy-hara-resume.pdf" target="_blank" rel="noopener">resume.pdf</a></li>
+            <li><a href="https://github.com/matiaslh" target="_blank" rel="noopener">github/</a></li>
+            <li><a href="https://www.linkedin.com/in/matiaslh" target="_blank" rel="noopener">linkedin/</a></li>
+            <li><a href="mailto:matiaslh@gmail.com">email</a></li>
+          </ul>
+
+          <!-- Interactive shell (enhanced by js/shell.js) -->
+          <div class="shell" data-shell data-hero-step hidden>
+            <div class="shell__output" data-shell-output aria-live="polite"></div>
+            <form class="shell__form" data-shell-form autocomplete="off">
+              <label class="prompt" for="shell-input">~ $</label>
+              <input id="shell-input" class="shell__input" data-shell-input type="text" spellcheck="false"
+                     autocapitalize="off" aria-label="Terminal command" placeholder="type 'help' and press enter">
+            </form>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#about"><span class="c-dim">scroll</span> <span class="scroll-hint__arrow">↓</span></a>
+    </section>
+
+    <!-- ───────────── ABOUT ───────────── -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="window">
+        <div class="window__bar">
+          <span class="window__dots"><i></i><i></i><i></i></span>
+          <span class="window__title">~/about.md</span>
+        </div>
+        <div class="window__body">
+          <p class="cmd"><span class="prompt">~ $</span> <span class="cmd__text" data-type>cat about.md</span></p>
+          <div class="output">
+            <h2 id="about-title" class="section__title"><span class="c-dim">#</span> About</h2>
+            <p>
+              I'm a software engineer at <strong>Meta</strong> in New York, in the <strong>Applied AI</strong> org.
+              I build hard, expertise-heavy tasks that frontier models struggle to solve, and research scientists
+              use them to benchmark and improve the models.
+            </p>
+            <p>
+              Right now that means shipping <span class="c-green">production-ready games in Godot</span> with my team,
+              for web, native and macOS. Before that I built <span class="c-green">multi-turn terminal tasks</span>,
+              where every extra step compounds the difficulty.
+            </p>
+            <p>
+              Before Applied AI, I spent almost four years at <strong>Meta Reality Labs</strong> in Seattle working on
+              VR calling, real-time avatar pipelines and the Horizon Media Player on Quest. Before that I was at
+              <strong>AWS</strong> on the DocumentDB team. I studied Computer Science at the University of Guelph.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── SKILLS ───────────── -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="window">
+        <div class="window__bar">
+          <span class="window__dots"><i></i><i></i><i></i></span>
+          <span class="window__title">~/skills.json</span>
+        </div>
+        <div class="window__body">
+          <p class="cmd"><span class="prompt">~ $</span> <span class="cmd__text" data-type>cat skills.json | jq</span></p>
+          <div class="output">
+            <h2 id="skills-title" class="visually-hidden">Skills</h2>
+<pre class="code code--json"><code><span class="tok-punc">{</span>
+  <span class="tok-key">"languages"</span><span class="tok-punc">:</span> <span class="tok-punc">[</span><span class="tok-str">"Java"</span>, <span class="tok-str">"Kotlin"</span>, <span class="tok-str">"C++"</span>, <span class="tok-str">"TypeScript"</span>, <span class="tok-str">"Python"</span><span class="tok-punc">]</span>,
+  <span class="tok-key">"frameworks"</span><span class="tok-punc">:</span> <span class="tok-punc">[</span><span class="tok-str">"React"</span>, <span class="tok-str">"React Native"</span>, <span class="tok-str">"Angular"</span>, <span class="tok-str">"GraphQL"</span>, <span class="tok-str">"RxJS"</span>, <span class="tok-str">"Godot"</span><span class="tok-punc">]</span>,
+  <span class="tok-key">"currently"</span><span class="tok-punc">:</span> <span class="tok-str">"building games and tasks that make frontier models better"</span>
+<span class="tok-punc">}</span></code></pre>
+            <ul class="chips" aria-label="Skills">
+              <li>Java</li><li>Kotlin</li><li>C++</li><li>TypeScript</li><li>Python</li>
+              <li>React</li><li>React Native</li><li>Angular</li><li>GraphQL</li><li>RxJS</li><li>Godot</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── EXPERIENCE ───────────── -->
+    <section id="experience" class="section" aria-labelledby="experience-title">
+      <div class="window">
+        <div class="window__bar">
+          <span class="window__dots"><i></i><i></i><i></i></span>
+          <span class="window__title">~/career — git log</span>
+        </div>
+        <div class="window__body">
+          <p class="cmd"><span class="prompt">~/career (main) $</span> <span class="cmd__text" data-type>git log --author="Matias"</span></p>
+          <div class="output">
+            <h2 id="experience-title" class="visually-hidden">Work experience</h2>
+            <ol class="gitlog">
+
+              <li class="commit">
+                <p class="commit__head"><span class="c-amber">commit 7f3a2c1</span> <span class="c-dim">(</span><span class="c-cyan">HEAD -&gt; main</span><span class="c-dim">)</span></p>
+                <p class="commit__meta"><span class="c-dim">Date:</span> May 2026 — Present <span class="c-dim">· New York, NY</span></p>
+                <h3 class="commit__title">Software Engineer <span class="c-dim">|</span> <span class="c-green">Meta Platforms Applied AI</span></h3>
+                <ul class="diff">
+                  <li>Create expert-level tasks that frontier models struggle to solve, used by research scientists to benchmark and improve models</li>
+                  <li>Game Dev track: build production-ready Godot games (web, native, macOS) in a team to create high-quality, real-world tasks</li>
+                  <li>Multi-turn Terminal Bench: built 20+ tasks where difficulty compounds across 2–3 steps</li>
+                </ul>
+                <ul class="chips chips--small"><li>Godot</li><li>Frontier models</li><li>Evals</li></ul>
+              </li>
+
+              <li class="commit">
+                <p class="commit__head"><span class="c-amber">commit 3b9e04d</span></p>
+                <p class="commit__meta"><span class="c-dim">Date:</span> Aug 2022 — May 2026 <span class="c-dim">· Seattle, WA</span></p>
+                <h3 class="commit__title">Software Engineer <span class="c-dim">|</span> <span class="c-green">Meta Platforms Reality Labs</span></h3>
+                <ul class="diff">
+                  <li>Led the Horizon Media Player revamp using React for Quest VR devices, improving user engagement and playback performance</li>
+                  <li>Built VR calling and real-time avatar data pipelines (C++, Java/Kotlin, GraphQL)</li>
+                  <li>Developed Co-Presence for avatar interaction in virtual homes with real-time device sync</li>
+                  <li>Owned SEVs from detection through resolution, driving cross-team collaboration to identify root causes and triage issues to the correct team</li>
+                </ul>
+                <ul class="chips chips--small"><li>React</li><li>C++</li><li>Java/Kotlin</li><li>GraphQL</li><li>VR</li></ul>
+              </li>
+
+              <li class="commit">
+                <p class="commit__head"><span class="c-amber">commit e51c8a0</span></p>
+                <p class="commit__meta"><span class="c-dim">Date:</span> May 2021 — Jun 2022 <span class="c-dim">· Toronto, ON</span></p>
+                <h3 class="commit__title">Software Development Engineer <span class="c-dim">|</span> <span class="c-green">Amazon AWS</span></h3>
+                <ul class="diff">
+                  <li>Led migration of DocumentDB CloudFormation resources, improving scalability, speed, reliability and code readability</li>
+                  <li>Developed and maintained performance analysis dashboard using REST APIs, ensuring customer database performance impact remained under 2%</li>
+                </ul>
+                <ul class="chips chips--small"><li>DocumentDB</li><li>CloudFormation</li><li>REST</li></ul>
+              </li>
+
+              <li class="commit">
+                <p class="commit__head"><span class="c-amber">commit 9d27f6b</span></p>
+                <p class="commit__meta"><span class="c-dim">Date:</span> May 2020 — Aug 2020 <span class="c-dim">· Toronto, ON</span></p>
+                <h3 class="commit__title">Angular Developer <span class="c-dim">|</span> <span class="c-green">Tyler Technologies</span></h3>
+                <ul class="diff">
+                  <li>Migrated legacy admin services and pages to Angular 8 (RxJS) and C#, delivering a modern Material Design admin UI</li>
+                </ul>
+                <ul class="chips chips--small"><li>Angular 8</li><li>RxJS</li><li>C#</li></ul>
+              </li>
+
+              <li class="commit">
+                <p class="commit__head"><span class="c-amber">commit 04a1e3f</span></p>
+                <p class="commit__meta"><span class="c-dim">Date:</span> Jan 2020 — Apr 2020 <span class="c-dim">· Guelph, ON</span></p>
+                <h3 class="commit__title">Software Developer <span class="c-dim">|</span> <span class="c-green">Camis Inc.</span></h3>
+                <ul class="diff">
+                  <li>Designed and built a new mobile app using React Native and Redux, tailored to client needs</li>
+                  <li>Developed and maintained a camping-booking website using Angular 8 and RxJS</li>
+                </ul>
+                <ul class="chips chips--small"><li>React Native</li><li>Redux</li><li>Angular 8</li></ul>
+              </li>
+
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── EDUCATION ───────────── -->
+    <section id="education" class="section" aria-labelledby="education-title">
+      <div class="window">
+        <div class="window__bar">
+          <span class="window__dots"><i></i><i></i><i></i></span>
+          <span class="window__title">~/education.yml</span>
+        </div>
+        <div class="window__body">
+          <p class="cmd"><span class="prompt">~ $</span> <span class="cmd__text" data-type>cat education.yml</span></p>
+          <div class="output">
+            <h2 id="education-title" class="visually-hidden">Education</h2>
+<pre class="code code--yaml"><code><span class="tok-key">degree</span><span class="tok-punc">:</span> <span class="tok-str">Bachelor of Computing (Honours)</span>
+<span class="tok-key">major</span><span class="tok-punc">:</span> <span class="tok-str">Computer Science</span>
+<span class="tok-key">minor</span><span class="tok-punc">:</span> <span class="tok-str">Mathematics</span>
+<span class="tok-key">school</span><span class="tok-punc">:</span> <span class="tok-str">University of Guelph</span>
+<span class="tok-key">graduated</span><span class="tok-punc">:</span> <span class="tok-num">May 2021</span>
+<span class="tok-key">co_op</span><span class="tok-punc">:</span> <span class="tok-num">6 work terms</span>  <span class="tok-com"># graduated with honours + co-op certification</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── CONTACT ───────────── -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="window">
+        <div class="window__bar">
+          <span class="window__dots"><i></i><i></i><i></i></span>
+          <span class="window__title">~/contact.sh</span>
+        </div>
+        <div class="window__body">
+          <p class="cmd"><span class="prompt">~ $</span> <span class="cmd__text" data-type>./contact.sh</span></p>
+          <div class="output">
+            <h2 id="contact-title" class="section__title"><span class="c-dim">#</span> Get in touch</h2>
+            <p class="c-dim">Inbox is open. Say hi.</p>
+            <dl class="contact">
+              <div><dt>email</dt><dd><a href="mailto:matiaslh@gmail.com">matiaslh@gmail.com</a></dd></div>
+              <div><dt>linkedin</dt><dd><a href="https://www.linkedin.com/in/matiaslh" target="_blank" rel="noopener">linkedin.com/in/matiaslh</a></dd></div>
+              <div><dt>github</dt><dd><a href="https://github.com/matiaslh" target="_blank" rel="noopener">github.com/matiaslh</a></dd></div>
+              <div><dt>resume</dt><dd><a href="assets/matias-levy-hara-resume.pdf" target="_blank" rel="noopener">matias-levy-hara-resume.pdf</a></dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><span class="prompt">~ $</span> exit <span class="c-dim">— logout · © <span data-year>2026</span> Matias Levy-Hara · plain HTML, CSS &amp; JS</span></p>
+  </footer>
+</body>
+</html>

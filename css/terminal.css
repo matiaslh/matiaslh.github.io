@@ -1,0 +1,40 @@
+/* ───────── Interactive shell in the hero ───────── */
+.shell {
+  border-top: 1px dashed var(--border-hi);
+  padding-top: 18px;
+}
+.shell__output {
+  max-height: 260px;
+  overflow-y: auto;
+  font-size: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-hi) transparent;
+}
+.shell__output:empty { display: none; }
+.shell__line { white-space: pre-wrap; overflow-wrap: anywhere; }
+.shell__line + .shell__line { margin-top: 2px; }
+.shell__line--cmd { color: var(--bright); margin-top: 10px; }
+.shell__line--cmd:first-child { margin-top: 0; }
+.shell__line--err { color: var(--red); }
+.shell__line--ok  { color: var(--green); }
+.shell__line--dim { color: var(--dim); }
+.shell__output + .shell__form { margin-top: 10px; }
+
+.shell__help { display: grid; grid-template-columns: max-content 1fr; gap: 0 18px; margin: 4px 0; }
+.shell__help dt { color: var(--cyan); }
+.shell__help dd { color: var(--dim); }
+
+.shell__form { display: flex; align-items: center; gap: 6px; }
+.shell__input {
+  flex: 1;
+  min-width: 0;
+  padding: 2px 0;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: var(--bright);
+  caret-color: var(--green);
+}
+.shell__input::placeholder { color: #4b535e; }
+.shell__input:focus::placeholder { color: transparent; }
+.shell__form:focus-within { text-shadow: none; }
