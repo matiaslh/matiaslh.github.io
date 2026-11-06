@@ -52,7 +52,7 @@ assets/
 
 Every `.window` gets working traffic-light buttons from `js/windows.js`:
 
-- **close** leaves a `[n]+ Terminated` line with a reopen button
+- **close** pops up a `[n]+ Terminated` notification (bottom right) with a reopen button
 - **minimize** sends the window to the dock at the bottom of the screen
 - **maximize** fills the screen; Esc, the button again or double-clicking the title bar restores it
 - **drag** the title bar to move; **resize** from the left/right/bottom edges or the corners

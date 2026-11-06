@@ -7,6 +7,7 @@ const LINKS = {
   email:    'mailto:matiaslh@gmail.com',
 };
 import { listJobs, foreground, resetWindows, closeWindowOf } from './windows.js';
+import { markActive } from './statusbar.js';
 
 const SECTIONS = ['profile', 'about', 'skills', 'experience', 'education', 'contact'];
 
@@ -43,6 +44,9 @@ const FILES = {
     'github    github.com/matiaslh',
   ],
 };
+
+// what an empty prompt + Tab lists
+const MAIN_COMMANDS = ['help', 'whoami', 'neofetch', 'ls', 'cat', 'cd', 'open', './contact.sh', 'jobs', 'fg', 'reset', 'clear', 'exit'];
 
 const HELP = [
   ['help', 'show this list'],
@@ -91,6 +95,7 @@ export function initShell() {
   const goTo = (id) => {
     const el = document.getElementById(id);
     if (!el) return false;
+    markActive(id);
     el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     window.history.replaceState(null, '', `#${id}`);
     return true;
@@ -198,9 +203,12 @@ export function initShell() {
       e.preventDefault();
       histIdx = Math.min(history.length, histIdx + 1);
       input.value = history[histIdx] ?? '';
-    } else if (e.key === 'Tab') {
-      const done = complete(input);
-      if (done) e.preventDefault();
+    } else if (e.key === 'Tab' && !e.shiftKey) {
+      // like a real shell, Tab always completes (or rings the bell); Shift+Tab or Esc leave the prompt
+      e.preventDefault();
+      if (!complete(input)) bell();
+    } else if (e.key === 'Escape') {
+      input.blur();
     } else if (e.key === 'l' && e.ctrlKey) {
       e.preventDefault();
       out.replaceChildren();
@@ -214,18 +222,23 @@ export function initShell() {
     input.focus({ preventScroll: true });
   });
 
+  function bell() {
+    input.classList.remove('is-bell');
+    void input.offsetWidth;          // restart the animation
+    input.classList.add('is-bell');
+  }
+
   function complete(el) {
-    const value = el.value;
+    const value = el.value.trimStart();
     const parts = value.split(/\s+/);
     const last = parts[parts.length - 1];
-    if (!last) return false;
     const pool = parts.length === 1
-      ? Object.keys(commands)
+      ? (last ? Object.keys(commands) : MAIN_COMMANDS)   // empty prompt + Tab lists the commands
       : parts[0] === 'cat' ? Object.keys(FILES)
       : parts[0] === 'cd' ? SECTIONS
       : parts[0] === 'open' ? Object.keys(LINKS)
       : [];
-    const matches = pool.filter((p) => p.startsWith(last));
+    const matches = [...new Set(pool.filter((p) => p.startsWith(last)))];
     if (matches.length === 1) {
       parts[parts.length - 1] = matches[0];
       el.value = parts.join(' ') + ' ';

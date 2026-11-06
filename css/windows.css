@@ -70,24 +70,37 @@
 .window.is-closed,
 .window.is-minimized { display: none !important; }
 
-.win-stub {
-  max-width: var(--maxw);
-  margin: 0 auto;
+/* closed-window notifications, stacked bottom-right above everything */
+.toasts {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 47;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px 12px;
-  padding: 10px 16px;
-  border: 1px dashed var(--border-hi);
-  border-radius: 8px;
-  background: rgba(13, 17, 23, 0.7);
-  font-size: 13px;
-  animation: stub-in 0.25s ease;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  width: min(320px, calc(100vw - 32px));
+  pointer-events: none;
 }
-.hero .win-stub { width: 100%; }
-.win-stub__title { color: var(--text); }
-.win-stub__btn {
-  margin-left: auto;
+.toast {
+  position: relative;
+  width: 100%;
+  padding: 12px 40px 12px 14px;
+  border: 1px solid var(--border-hi);
+  border-left: 0;
+  border-radius: 10px;
+  background: #0d1117;
+  box-shadow: 0 18px 40px -14px rgba(0, 0, 0, 0.85), inset 3px 0 0 var(--red);
+  font-size: 13px;
+  line-height: 1.5;
+  pointer-events: auto;
+  animation: toast-in 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.15);
+}
+.toast__head { font-size: 12px; }
+.toast__title { color: var(--bright); margin: 2px 0 10px; overflow-wrap: anywhere; }
+.toast__actions { display: flex; gap: 8px; }
+.toast__btn {
   padding: 2px 10px;
   border: 1px solid var(--border-hi);
   border-radius: 999px;
@@ -95,8 +108,26 @@
   color: var(--cyan);
   cursor: pointer;
 }
-.win-stub__btn:hover { border-color: var(--green); color: var(--green); }
-@keyframes stub-in { from { opacity: 0; transform: translateY(-4px); } }
+.toast__btn:hover { border-color: var(--green); color: var(--green); }
+.toast__close {
+  position: absolute;
+  top: 6px; right: 8px;
+  width: 24px; height: 24px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--dim);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+.toast__close:hover { color: var(--bright); background: rgba(255, 255, 255, 0.06); }
+@keyframes toast-in { from { opacity: 0; transform: translateX(110%); } }
+
+/* on phones, sit above the dock */
+@media (max-width: 720px) {
+  .toasts { right: 12px; left: 12px; width: auto; bottom: 70px; }
+}
 
 /* ───────── Dock (minimized windows) ───────── */
 .dock {
@@ -110,7 +141,7 @@
   gap: 10px;
   max-width: calc(100vw - 24px);
   padding: 6px 8px 6px 14px;
-  background: rgba(13, 17, 23, 0.9);
+  background: #0d1117;
   border: 1px solid var(--border-hi);
   border-radius: 12px;
   box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.8);
@@ -212,7 +243,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .win-stub, .dock__item.is-new { animation: none; }
+  .toast, .dock__item.is-new { animation: none; }
 }
 
 /* never hide the profile window: its title bar peeks above the fold */

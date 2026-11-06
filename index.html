@@ -91,12 +91,12 @@
             <form class="shell__form" data-shell-form autocomplete="off">
               <label class="prompt" for="shell-input">~ $</label>
               <input id="shell-input" class="shell__input" data-shell-input type="text" spellcheck="false"
-                     autocapitalize="off" aria-label="Terminal command" placeholder="type 'help' and press enter">
+                     autocapitalize="off" aria-label="Terminal command" placeholder="type 'help' and press enter · tab completes">
             </form>
           </div>
         </div>
       </div>
-      <a class="scroll-hint" href="#profile"><span class="c-dim">scroll</span> <span class="scroll-hint__arrow">↓</span></a>
+      <a class="scroll-hint" href="#profile"><span class="scroll-hint__prompt">$</span> scroll down <span class="scroll-hint__arrow">↓</span></a>
     </section>
 
     <!-- ───────────── PROFILE (neofetch) ───────────── -->
@@ -119,7 +119,7 @@
             <div class="neofetch__info">
               <h2 id="profile-title" class="neofetch__user"><span class="c-green">matias</span><span class="c-dim">@</span><span class="c-cyan">nyc</span></h2>
               <p class="neofetch__rule" aria-hidden="true">──────────</p>
-              <dl class="neofetch__list">
+              <dl class="neofetch__list" data-stagger>
                 <div><dt>Name</dt><dd>Matias Levy-Hara</dd></div>
                 <div><dt>Role</dt><dd>Software Engineer</dd></div>
                 <div><dt>Org</dt><dd>Meta Platforms · Applied AI</dd></div>
@@ -184,7 +184,7 @@
   <span class="tok-key">"frameworks"</span><span class="tok-punc">:</span> <span class="tok-punc">[</span><span class="tok-str">"React"</span>, <span class="tok-str">"React Native"</span>, <span class="tok-str">"Angular"</span>, <span class="tok-str">"GraphQL"</span>, <span class="tok-str">"RxJS"</span>, <span class="tok-str">"Godot"</span><span class="tok-punc">]</span>,
   <span class="tok-key">"currently"</span><span class="tok-punc">:</span> <span class="tok-str">"building games and tasks that make frontier models better"</span>
 <span class="tok-punc">}</span></code></pre>
-            <ul class="chips" aria-label="Skills">
+            <ul class="chips" aria-label="Skills" data-stagger>
               <li>Java</li><li>Kotlin</li><li>C++</li><li>TypeScript</li><li>Python</li>
               <li>React</li><li>React Native</li><li>Angular</li><li>GraphQL</li><li>RxJS</li><li>Godot</li>
             </ul>
@@ -204,7 +204,7 @@
           <p class="cmd"><span class="prompt">~/career (main) $</span> <span class="cmd__text" data-type>git log --author="Matias"</span></p>
           <div class="output">
             <h2 id="experience-title" class="visually-hidden">Work experience</h2>
-            <ol class="gitlog">
+            <ol class="gitlog" data-stagger>
 
               <li class="commit">
                 <p class="commit__head"><span class="c-amber">commit 7f3a2c1</span> <span class="c-dim">(</span><span class="c-cyan">HEAD -&gt; main</span><span class="c-dim">)</span></p>
@@ -303,7 +303,7 @@
           <div class="output">
             <h2 id="contact-title" class="section__title"><span class="c-dim">#</span> Get in touch</h2>
             <p class="c-dim">Inbox is open. Say hi.</p>
-            <dl class="contact">
+            <dl class="contact" data-stagger>
               <div><dt>email</dt><dd><a href="mailto:matiaslh@gmail.com">matiaslh@gmail.com</a></dd></div>
               <div><dt>linkedin</dt><dd><a href="https://www.linkedin.com/in/matiaslh" target="_blank" rel="noopener">linkedin.com/in/matiaslh</a></dd></div>
               <div><dt>github</dt><dd><a href="https://github.com/matiaslh" target="_blank" rel="noopener">github.com/matiaslh</a></dd></div>

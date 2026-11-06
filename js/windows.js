@@ -1,5 +1,5 @@
 // Window manager: makes every .window behave like a real terminal window.
-//   red    close     → window exits; a "[n]+ Terminated" stub with a reopen button stays in its place
+//   red    close     → window exits; a "[n]+ Terminated" notification with a reopen button pops up bottom-right
 //   yellow minimize  → window shrinks into the dock at the bottom of the screen
 //   green  maximize  → window fills the screen (Esc, the button again or double-click the bar to restore)
 //   drag the title bar to move, drag the edges / corner to resize (wide screens only)
@@ -15,11 +15,12 @@ const states = new Map();      // window element -> state
 let zTop = 10;
 let jobSeq = 0;
 let reduceMotion = false;
-let dock, dockItems, backdrop;
+let dock, dockItems, backdrop, toasts;
 
 export function initWindows(opts = {}) {
   reduceMotion = !!opts.reduceMotion;
   createDock();
+  createToasts();
   createBackdrop();
   document.querySelectorAll('.window').forEach(enhance);
 
@@ -164,17 +165,46 @@ async function doClose(win, s) {
   win.classList.add('is-closed');
   s.hiddenAt = performance.now();
 
-  const stub = document.createElement('div');
-  stub.className = 'win-stub';
+  s.toast = showToast(s, win);
+}
+
+// ───────────────────────── notifications (bottom-right) ─────────────────────────
+
+function createToasts() {
+  toasts = document.createElement('div');
+  toasts.className = 'toasts';
+  toasts.setAttribute('role', 'status');
+  toasts.setAttribute('aria-live', 'polite');
+  toasts.setAttribute('aria-label', 'Notifications');
+  document.body.append(toasts);
+}
+
+function showToast(s, win) {
+  const t = document.createElement('div');
+  t.className = 'toast';
+  const head = document.createElement('p'); head.className = 'toast__head';
   const job = document.createElement('span'); job.className = 'c-dim'; job.textContent = `[${s.job}]+`;
   const status = document.createElement('span'); status.className = 'c-red'; status.textContent = 'Terminated';
-  const name = document.createElement('span'); name.className = 'win-stub__title'; name.textContent = s.title;
-  const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'win-stub__btn'; btn.textContent = '↻ reopen';
-  btn.setAttribute('aria-label', `Reopen ${s.title}`);
-  btn.addEventListener('click', () => restore(win));
-  stub.append(job, status, name, btn);
-  s.stub = stub;
-  win.after(stub);
+  head.append(job, ' ', status);
+  const name = document.createElement('p'); name.className = 'toast__title'; name.textContent = s.title;
+  const actions = document.createElement('div'); actions.className = 'toast__actions';
+  const reopen = document.createElement('button'); reopen.type = 'button'; reopen.className = 'toast__btn'; reopen.textContent = '↻ reopen';
+  reopen.setAttribute('aria-label', `Reopen ${s.title}`);
+  reopen.addEventListener('click', () => restore(win));
+  const close = document.createElement('button'); close.type = 'button'; close.className = 'toast__close'; close.textContent = '×';
+  close.setAttribute('aria-label', 'Dismiss notification');
+  close.addEventListener('click', () => { dismissToast(s.toast); s.toast = null; });
+  actions.append(reopen);
+  t.append(head, name, actions, close);
+  toasts.append(t);
+  return t;
+}
+
+function dismissToast(t) {
+  if (!t) return;
+  if (reduceMotion || !t.animate) { t.remove(); return; }
+  t.animate([{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateX(110%)' }],
+    { duration: 220, easing: 'ease-in' }).finished.catch(() => {}).then(() => t.remove());
 }
 
 function minimize(win) {
@@ -216,7 +246,7 @@ async function restore(win, { instant = false, scroll = true } = {}) {
   if (!isHidden(win)) return;
   const fromDock = win.classList.contains('is-minimized') ? s.dockItem?.getBoundingClientRect() : null;
 
-  s.stub?.remove(); s.stub = null;
+  dismissToast(s.toast); s.toast = null;
   s.dockItem?.remove(); s.dockItem = null;
   dock.hidden = !dockItems.children.length;
   win.classList.remove('is-closed', 'is-minimized');

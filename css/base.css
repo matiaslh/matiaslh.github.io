@@ -34,6 +34,7 @@ button, input { font: inherit; color: inherit; }
 
 body {
   min-height: 100vh;
+  overflow-x: clip;
   background: radial-gradient(1200px 800px at 70% -10%, #0f1a24 0%, transparent 60%),
               radial-gradient(900px 700px at -10% 110%, #10161f 0%, transparent 60%),
               var(--bg);

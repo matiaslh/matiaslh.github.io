@@ -36,5 +36,10 @@
   caret-color: var(--green);
 }
 .shell__input::placeholder { color: #4b535e; }
+.shell__input.is-bell { animation: bell 0.28s ease; }
+@keyframes bell {
+  0%, 100% { background: transparent; }
+  30% { background: rgba(255, 123, 114, 0.18); box-shadow: 0 0 0 4px rgba(255, 123, 114, 0.18); }
+}
 .shell__input:focus::placeholder { color: transparent; }
 .shell__form:focus-within { text-shadow: none; }

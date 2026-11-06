@@ -5,6 +5,11 @@ import { typeInto } from './typing.js';
 export function initReveal({ reduceMotion }) {
   const windows = [...document.querySelectorAll('.section .window')];
 
+  // index each line of a [data-stagger] list so CSS can delay it
+  document.querySelectorAll('[data-stagger]').forEach((list) => {
+    [...list.children].forEach((child, i) => child.style.setProperty('--i', String(i)));
+  });
+
   const show = async (win) => {
     win.classList.add('is-visible');
     const cmd = win.querySelector('[data-type]');
