@@ -6,7 +6,9 @@ const LINKS = {
   linkedin: 'https://www.linkedin.com/in/matiaslh',
   email:    'mailto:matiaslh@gmail.com',
 };
-const SECTIONS = ['about', 'skills', 'experience', 'education', 'contact'];
+import { listJobs, foreground, resetWindows, closeWindowOf } from './windows.js';
+
+const SECTIONS = ['profile', 'about', 'skills', 'experience', 'education', 'contact'];
 
 const FILES = {
   'about.md': [
@@ -45,12 +47,16 @@ const FILES = {
 const HELP = [
   ['help', 'show this list'],
   ['whoami', 'who is this?'],
+  ['neofetch', 'system info (well, me)'],
   ['ls', 'list files'],
   ['cat <file>', 'print a file, e.g. cat about.md'],
   ['cd <section>', SECTIONS.join(' · ')],
   ['open <link>', 'github · linkedin · email'],
   ['./contact.sh', 'how to reach me'],
+  ['jobs / fg', 'list or bring back closed & minimized windows'],
+  ['reset', 'put every window back in place'],
   ['clear', 'clear the screen'],
+  ['exit', 'close this terminal'],
 ];
 
 export function initShell() {
@@ -135,7 +141,28 @@ export function initShell() {
         line('visitor is not in the sudoers file. This incident will be reported.', 'err');
       }
     },
-    exit: () => { line('logout… just kidding, there is more below ↓', 'dim'); goTo('about'); },
+    exit: () => { line('logout', 'dim'); closeWindowOf('home'); },
+    neofetch: () => {
+      lines([
+        'matias@nyc',
+        '──────────',
+        'Role:      Software Engineer · Meta Platforms Applied AI',
+        'Location:  New York, NY',
+        'Focus:     frontier-model tasks · Godot games',
+        'Previous:  Reality Labs (VR) · AWS DocumentDB',
+      ]);
+      goTo('profile');
+    },
+    jobs: () => {
+      const j = listJobs();
+      if (!j.length) return line('no jobs. every window is open.', 'dim');
+      j.forEach((x) => line(`[${x.job}]  ${x.status.padEnd(10)}  ${x.title}`));
+    },
+    fg: ([n]) => {
+      const title = foreground(n ? Number(String(n).replace('%', '')) : undefined);
+      line(title ? `${title}` : 'fg: no current job', title ? 'ok' : 'err');
+    },
+    reset: () => { resetWindows(); line('windows reset.', 'ok'); },
     rm: () => line('nice try.', 'err'),
     vim: () => line("you'd never get out. try 'help' instead.", 'dim'),
   };

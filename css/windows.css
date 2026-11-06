@@ -1,0 +1,219 @@
+/* ───────── Window controls (traffic lights) ───────── */
+.window { position: relative; }
+
+.window__controls { position: relative; z-index: 3; display: flex; gap: 8px; }
+.wc {
+  position: relative;
+  width: 12px; height: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  color: rgba(0, 0, 0, 0.6);
+  font: 700 10px/1 var(--font);
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+.wc::after { content: ""; position: absolute; inset: -5px; }   /* bigger hit area */
+.wc--close    { background: #ff5f57; }
+.wc--minimize { background: #febc2e; }
+.wc--maximize { background: #28c840; }
+.wc::before { opacity: 0; transition: opacity 0.12s ease; }
+.wc--close::before    { content: "×"; font-size: 11px; margin-top: -1px; }
+.wc--minimize::before { content: "−"; }
+.wc--maximize::before { content: "+"; }
+.is-maximized .wc--maximize::before { content: "–"; }
+.window__controls:hover .wc::before,
+.wc:focus-visible::before { opacity: 1; }
+.wc:hover { filter: brightness(1.12); }
+.wc:active { transform: scale(0.9); }
+.wc:focus-visible { outline-offset: 2px; }
+
+/* ───────── Dragging ───────── */
+@media (min-width: 721px) {
+  .window__bar { cursor: grab; user-select: none; touch-action: none; }
+}
+.window.is-dragging { box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.85), 0 0 0 1px var(--border-hi); }
+.window.is-dragging .window__bar { cursor: grabbing; }
+.is-moving-window, .is-moving-window * { user-select: none !important; }
+.is-moving-window body { cursor: grabbing; }
+
+/* ───────── Resize handles ───────── */
+.win-resize { position: absolute; z-index: 4; touch-action: none; }
+.win-resize--e  { top: 36px; right: 0;  bottom: 14px; width: 7px;  cursor: ew-resize; }
+.win-resize--w  { top: 36px; left: 0;   bottom: 14px; width: 7px;  cursor: ew-resize; }
+.win-resize--s  { left: 14px; right: 14px; bottom: 0; height: 7px; cursor: ns-resize; }
+.win-resize--se { right: 0; bottom: 0; width: 16px; height: 16px; cursor: nwse-resize; }
+.win-resize--sw { left: 0;  bottom: 0; width: 16px; height: 16px; cursor: nesw-resize; }
+.win-resize--se::after {                       /* grip */
+  content: "";
+  position: absolute; right: 3px; bottom: 3px;
+  width: 9px; height: 9px;
+  background: linear-gradient(135deg, transparent 0 45%, var(--border-hi) 45% 55%, transparent 55% 70%, var(--border-hi) 70% 80%, transparent 80%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.window:hover .win-resize--se::after,
+.window.is-resizing .win-resize--se::after { opacity: 1; }
+
+@media (max-width: 720px) {
+  .win-resize { display: none; }
+}
+
+/* a resized window: fixed height, body scrolls */
+.window.is-sized { display: flex; flex-direction: column; }
+.window.is-sized .window__bar { flex: none; }
+.window.is-sized .window__body { flex: 1 1 auto; min-height: 0; overflow: auto; }
+
+/* ───────── Closed / minimized ───────── */
+.window.is-closed,
+.window.is-minimized { display: none !important; }
+
+.win-stub {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  padding: 10px 16px;
+  border: 1px dashed var(--border-hi);
+  border-radius: 8px;
+  background: rgba(13, 17, 23, 0.7);
+  font-size: 13px;
+  animation: stub-in 0.25s ease;
+}
+.hero .win-stub { width: 100%; }
+.win-stub__title { color: var(--text); }
+.win-stub__btn {
+  margin-left: auto;
+  padding: 2px 10px;
+  border: 1px solid var(--border-hi);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--cyan);
+  cursor: pointer;
+}
+.win-stub__btn:hover { border-color: var(--green); color: var(--green); }
+@keyframes stub-in { from { opacity: 0; transform: translateY(-4px); } }
+
+/* ───────── Dock (minimized windows) ───────── */
+.dock {
+  position: fixed;
+  left: 50%;
+  bottom: 14px;
+  z-index: 45;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100vw - 24px);
+  padding: 6px 8px 6px 14px;
+  background: rgba(13, 17, 23, 0.9);
+  border: 1px solid var(--border-hi);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: 12.5px;
+}
+.dock[hidden] { display: none; }
+.dock__label { color: var(--dim); }
+.dock__label::before { content: "$ "; color: var(--green); }
+.dock__items { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.dock__item {
+  flex: none;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.dock__item:hover { border-color: var(--green); color: var(--green); }
+.dock__item.is-new { animation: dock-pop 0.3s ease; }
+@keyframes dock-pop { 50% { transform: scale(1.08); } }
+
+/* ───────── Maximized ───────── */
+.win-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  background: rgba(3, 5, 8, 0.6);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+.win-backdrop[hidden] { display: none; }
+.has-maximized { overflow: hidden; }
+
+.window.is-maximized {
+  position: fixed;
+  inset: calc(var(--statusbar-h) + 12px) 12px 12px;
+  z-index: 60 !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: none !important;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  translate: none !important;
+  opacity: 1 !important;
+}
+.window.is-maximized .window__body { flex: 1 1 auto; min-height: 0; overflow: auto; }
+.window.is-maximized .win-resize { display: none; }
+.window.is-maximized .window__bar { cursor: default; }
+
+/* ───────── neofetch profile ───────── */
+.neofetch {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px 40px;
+  align-items: start;
+}
+.output.neofetch > * + * { margin-top: 0; }
+.neofetch__logo {
+  margin: 4px 0 0;
+  font: 400 12px/1 var(--font);
+  letter-spacing: 0;
+  background: linear-gradient(180deg, var(--green) 10%, var(--cyan) 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 10px rgba(126, 231, 135, 0.25));
+  user-select: none;
+}
+.neofetch__user { font-size: 16px; line-height: 1.4; font-weight: 700; }
+.neofetch__rule { color: var(--dim); line-height: 1.2; margin: 2px 0 8px; }
+.neofetch__list { display: grid; gap: 1px; }
+.neofetch__list > div { display: grid; grid-template-columns: 11ch 1fr; gap: 12px; }
+.neofetch__list dt { color: var(--cyan); font-weight: 700; }
+.neofetch__list dt::after { content: ":"; color: var(--dim); }
+.neofetch__list dd { min-width: 0; }
+.neofetch__colors { display: flex; margin-top: 16px; }
+.neofetch__colors span { width: 26px; height: 14px; }
+.neofetch__colors span:nth-child(1) { background: #3b4452; }
+.neofetch__colors span:nth-child(2) { background: var(--red); }
+.neofetch__colors span:nth-child(3) { background: var(--green); }
+.neofetch__colors span:nth-child(4) { background: var(--amber); }
+.neofetch__colors span:nth-child(5) { background: var(--cyan); }
+.neofetch__colors span:nth-child(6) { background: var(--magenta); }
+.neofetch__colors span:nth-child(7) { background: #56d4dd; }
+.neofetch__colors span:nth-child(8) { background: var(--bright); }
+
+/* the profile window sits right under the hero, so it's revealed straight away */
+.section--profile { padding-top: 8px; }
+
+@media (max-width: 720px) {
+  .neofetch { grid-template-columns: 1fr; }
+  .neofetch__logo { font-size: 9px; }
+  .neofetch__list > div { grid-template-columns: 1fr; gap: 0; margin-bottom: 4px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .win-stub, .dock__item.is-new { animation: none; }
+}
+
+/* never hide the profile window: its title bar peeks above the fold */
+.js .section--profile .window { opacity: 1; transform: none; }

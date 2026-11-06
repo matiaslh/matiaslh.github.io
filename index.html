@@ -22,8 +22,14 @@
   <link rel="stylesheet" href="css/parallax.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/terminal.css">
+  <link rel="stylesheet" href="css/windows.css">
 
-  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+  <script>
+    // Hide-then-reveal effects only apply once the JS modules are actually running.
+    // If they never load (e.g. the page was opened from file://), show everything.
+    document.documentElement.classList.replace('no-js', 'js');
+    setTimeout(function () { if (!window.__siteReady) document.documentElement.classList.remove('js'); }, 2500);
+  </script>
   <script type="module" src="js/main.js"></script>
 </head>
 <body>
@@ -42,6 +48,7 @@
     <a class="statusbar__brand" href="#home"><span class="c-green">matias</span><span class="c-dim">@</span><span class="c-cyan">nyc</span></a>
     <nav class="statusbar__nav" aria-label="Sections">
       <ol>
+        <li><a href="#profile" data-nav>profile</a></li>
         <li><a href="#about" data-nav>about</a></li>
         <li><a href="#skills" data-nav>skills</a></li>
         <li><a href="#experience" data-nav>experience</a></li>
@@ -89,7 +96,45 @@
           </div>
         </div>
       </div>
-      <a class="scroll-hint" href="#about"><span class="c-dim">scroll</span> <span class="scroll-hint__arrow">↓</span></a>
+      <a class="scroll-hint" href="#profile"><span class="c-dim">scroll</span> <span class="scroll-hint__arrow">↓</span></a>
+    </section>
+
+    <!-- ───────────── PROFILE (neofetch) ───────────── -->
+    <section id="profile" class="section section--profile" aria-labelledby="profile-title">
+      <div class="window">
+        <div class="window__bar">
+          <span class="window__dots"><i></i><i></i><i></i></span>
+          <span class="window__title">~ — neofetch</span>
+        </div>
+        <div class="window__body">
+          <p class="cmd"><span class="prompt">~ $</span> <span class="cmd__text" data-type>neofetch</span></p>
+          <div class="output neofetch">
+<pre class="neofetch__logo" aria-hidden="true">██          ██  ██
+████      ████  ██
+██  ██  ██  ██  ██
+██    ██    ██  ██
+██          ██  ██
+██          ██  ██
+██          ██  ██████████</pre>
+            <div class="neofetch__info">
+              <h2 id="profile-title" class="neofetch__user"><span class="c-green">matias</span><span class="c-dim">@</span><span class="c-cyan">nyc</span></h2>
+              <p class="neofetch__rule" aria-hidden="true">──────────</p>
+              <dl class="neofetch__list">
+                <div><dt>Name</dt><dd>Matias Levy-Hara</dd></div>
+                <div><dt>Role</dt><dd>Software Engineer</dd></div>
+                <div><dt>Org</dt><dd>Meta Platforms · Applied AI</dd></div>
+                <div><dt>Location</dt><dd>New York, NY</dd></div>
+                <div><dt>Uptime</dt><dd data-uptime>4 yrs, 3 mos at Meta</dd></div>
+                <div><dt>Focus</dt><dd>Frontier-model tasks · Godot games</dd></div>
+                <div><dt>Previously</dt><dd>Reality Labs (VR) · AWS DocumentDB</dd></div>
+                <div><dt>Languages</dt><dd>C++ · Kotlin · Java · TypeScript · Python</dd></div>
+                <div><dt>Education</dt><dd>BComp (Hons), Computer Science · U of Guelph</dd></div>
+              </dl>
+              <p class="neofetch__colors" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ───────────── ABOUT ───────────── -->

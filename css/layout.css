@@ -8,7 +8,7 @@
   align-items: center;
   gap: 20px;
   padding: 0 20px;
-  background: rgba(7, 9, 13, 0.72);
+  background: rgba(7, 9, 13, 0.94);
   backdrop-filter: blur(10px) saturate(140%);
   -webkit-backdrop-filter: blur(10px) saturate(140%);
   border-bottom: 1px solid var(--border);
@@ -118,7 +118,8 @@ main { padding: calc(var(--statusbar-h) + 24px) 20px 40px; }
 
 /* ───────── Hero ───────── */
 .hero {
-  min-height: min(calc(100vh - var(--statusbar-h) - 24px), 980px);
+  /* leaves ~60px at the bottom so the next window's title bar peeks in */
+  min-height: min(calc(100vh - var(--statusbar-h) - 92px), 900px);
   display: flex;
   flex-direction: column;
   justify-content: center;

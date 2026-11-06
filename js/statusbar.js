@@ -36,6 +36,18 @@ export function initStatusbar() {
     setInterval(tick, 15_000);
   }
 
+  // neofetch "Uptime": time at Meta since Aug 2022
+  const uptime = document.querySelector('[data-uptime]');
+  if (uptime) {
+    const now = new Date();
+    const months = (now.getFullYear() - 2022) * 12 + (now.getMonth() - 7);
+    const y = Math.floor(months / 12), m = months % 12;
+    const parts = [];
+    if (y) parts.push(`${y} yr${y === 1 ? '' : 's'}`);
+    if (m) parts.push(`${m} mo${m === 1 ? '' : 's'}`);
+    uptime.textContent = `${parts.join(', ') || 'just started'} at Meta`;
+  }
+
   const year = document.querySelector('[data-year]');
   if (year) year.textContent = String(new Date().getFullYear());
 }
