@@ -2,7 +2,6 @@
 // Output is built with textContent only, so nothing typed is ever parsed as HTML.
 
 const LINKS = {
-  resume:   'assets/matias-levy-hara-resume.pdf',
   github:   'https://github.com/matiaslh',
   linkedin: 'https://www.linkedin.com/in/matiaslh',
   email:    'mailto:matiaslh@gmail.com',
@@ -49,7 +48,7 @@ const HELP = [
   ['ls', 'list files'],
   ['cat <file>', 'print a file, e.g. cat about.md'],
   ['cd <section>', SECTIONS.join(' · ')],
-  ['open <link>', 'resume · github · linkedin · email'],
+  ['open <link>', 'github · linkedin · email'],
   ['./contact.sh', 'how to reach me'],
   ['clear', 'clear the screen'],
 ];
@@ -103,10 +102,9 @@ export function initShell() {
     help: () => helpTable(),
     whoami: () => line('Matias Levy-Hara — Software Engineer @ Meta Platforms Applied AI (New York, NY)'),
     pwd: () => line('/home/visitor'),
-    ls: () => line([...Object.keys(FILES), 'resume.pdf'].join('   '), 'ok'),
+    ls: () => line(Object.keys(FILES).join('   '), 'ok'),
     cat: ([file]) => {
       if (!file) return line('cat: missing file operand. try: cat about.md', 'err');
-      if (file === 'resume.pdf') return line('binary file. try: open resume', 'dim');
       const body = FILES[file] || FILES[`${file}.md`];
       if (!body) return line(`cat: ${file}: No such file or directory`, 'err');
       lines(body);
@@ -119,8 +117,8 @@ export function initShell() {
       line(`→ ${id}`, 'dim');
     },
     open: ([name]) => {
-      if (!name) return line('open: which one? resume · github · linkedin · email', 'err');
-      const key = name.replace(/\.pdf$/, '');
+      if (!name) return line('open: which one? github · linkedin · email', 'err');
+      const key = name.replace(/\/$/, '');
       if (openLink(key)) line(`opening ${key}…`, 'dim');
       else line(`open: unknown link: ${name}`, 'err');
     },
@@ -143,7 +141,6 @@ export function initShell() {
   };
   commands.vi = commands.nano = commands.emacs = commands.vim;
   commands.contact = commands['./contact.sh'];
-  commands.resume = () => commands.open(['resume']);
   for (const s of SECTIONS) if (!commands[s]) commands[s] = () => commands.cd([s]);
 
   const run = (raw) => {
@@ -197,7 +194,7 @@ export function initShell() {
     if (!last) return false;
     const pool = parts.length === 1
       ? Object.keys(commands)
-      : parts[0] === 'cat' ? [...Object.keys(FILES), 'resume.pdf']
+      : parts[0] === 'cat' ? Object.keys(FILES)
       : parts[0] === 'cd' ? SECTIONS
       : parts[0] === 'open' ? Object.keys(LINKS)
       : [];

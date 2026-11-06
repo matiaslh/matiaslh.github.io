@@ -37,15 +37,13 @@ js/
   util.js            seeded RNG, hashing, helpers
 assets/
   favicon.svg
-  matias-levy-hara-resume.pdf
 ```
 
 ## Editing content
 
 - **Profile text** lives directly in `index.html` (about, skills, experience, education, contact).
 - **The shell's copy** of the same content (`cat about.md`, `cat experience.log`, …) is in the
-  `FILES` object at the top of `js/shell.js`. Update both when the resume changes.
-- **Resume PDF:** replace `assets/matias-levy-hara-resume.pdf`.
+  `FILES` object at the top of `js/shell.js`. Update both when your experience changes.
 
 ## Parallax tuning
 
